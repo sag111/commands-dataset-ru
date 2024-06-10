@@ -1,0 +1,5 @@
+Given the following classes: "near", "behind_of", "in_front_of", "to_left_from", "to_right_from", "to_north_from", "to_south_from", "to_east_from", "to_west_from".
+Write CLASS of object "TARGET". You can't use any other classes. If none of the classes approach, choose the closest one. Explain why shortly.
+Give answer in next form:
+Class:
+Explanation:

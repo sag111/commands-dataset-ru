@@ -1,0 +1,5 @@
+Given the following classes: "house", "tree", "broken_tree", "forest", "pit", "human", "hill", "fissure", "man_lay", "rock", "butte", "barrier", "lamp_post", "car", "route", "circle".
+Write CLASS of object "TARGET". You can't use any other classes. If none of the classes approach, choose the closest one. Explain why shortly.
+Give answer in next form:
+Class:
+Explanation:

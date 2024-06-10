@@ -1,0 +1,35 @@
+Translate on English and after that write JSON and translated sentence for [TARGET]. JSON should keep the following rules:
+- Possible keys are "action", "direction", "meters", "degs", "hours", "object1", "nearest", "relation1", "object2", "relation2", "object3", "self", "gaze". Some keys may not be used.
+- For each value choose more appropriate class described below. You can't use any other classes. If none of the classes approach, find the closest one.
+Please choose key values from next classes:
+1. For key "action" use the following classes "patrol", "stop", "move_dir", "rotate_dir", "move_on", "rotate_on", "move_to", "find", "go_around", "monitor", "rotate_to", "pause", "continue", "analyze", "follow"
+2. For key "direction" use the following classes "dir_forward", "dir_backward", "dir_right", "dir_left", "dir_north", "dir_south", "dir_east", "dir_west"
+3. For key "meters" use distance from translated sentence
+4. For key "degs" use distance from translated sentence
+5. For key "hours" use distance from translated sentence
+6. For key "object1" use the following classes "house", "tree", "broken_tree", "forest", "pit", "human", "hill", "fissure", "man_lay", "rock", "butte", "barrier", "lamp_post", "car", "circle", "route"
+7. For key "nearest" use "nearest_from_type"
+8. For key "relation1" use the following classes "near", "behind_of", "in_front_of", "to_left_from", "to_right_from", "to_north_from", "to_south_from", "to_east_from", "to_west_from"
+9. For key "object2" use the following classes "house", "tree", "broken_tree", "forest", "pit", "human", "hill", "fissure", "man_lay", "rock", "butte", "barrier", "lamp_post", "car"
+10. For key "relation2" use the following classes "near", "behind_of", "in_front_of", "to_left_from", "to_right_from", "to_north_from", "to_south_from", "to_east_from", "to_west_from"
+11. For key "object3" use the following classes "house", "tree", "broken_tree", "forest", "pit", "human", "hill", "fissure", "man_lay", "rock", "butte", "barrier", "lamp_post", "car"
+12. For key "self" use the following classes "behind_of", "in_front_of", "to_left_from", "to_right_from", "to_north_from", "to_south_from", "to_east_from", "to_west_from"
+13. For key "gaze" use "by_gaze_line"
+JSON should look like next examples:
+Sentence: иди вперед, JSON: {"action": "move_dir", "direction": "dir_forward"}
+Sentence: шагай назад 10 м, JSON: {"action": "move_on", "direction": "dir_backward", "meters": 10}
+Sentence: патрулируй по первому маршруту, JSON: {"action": "patrol", "meters": 1, "object1": "route"}
+Sentence: патрулируй по кругу радиуса 7 м, JSON: {"action": "patrol", "meters": 7, "object1": "circle"}
+Sentence: иди прямо 56 метров, JSON: {"action": "move_on", "direction": "dir_forward", "meters": 56}
+Sentence: начинай поворачивать на восток на 146 градусов, JSON: {"action": "rotate_on", "direction": "dir_east", "degs": 146}
+Sentence: поверни налево на 3 часа, JSON: {"action": "rotate_on", "direction": "dir_left", "hours": 3.0}
+Sentence: изучи ближнюю машину, JSON: {"action": "analyze", "object1": "car", "nearest": "nearest_from_type"}
+Sentence: следуй за машиной, JSON: {"action": "follow", "object1": "car"}
+Sentence: поверните к булыжнику, расположенному слева от человека, находящегося за холмом, JSON: {"action": "rotate_to", "object1": "rock", "relation1": "to_left_from", "object2": "human", "relation2": "behind_of", "object3": "hill"}
+Sentence: проанализируйте лампу перед вами, JSON: {"action": "analyze", "object1": "lamp_post", "self": "in_front_of"}
+Sentence: иди к этому дереву, JSON: {"action": "move_to", "object1": "tree", "gaze": "by_gaze_line"}
+Sentence: иди туда, JSON: {"action": "move_to", "gaze": "by_gaze_line"}
+Sentence: шагай по этому пути к булыжнику, JSON: {"action": "move_to", "object1": "rock", "gaze": "by_gaze_line"}
+Give answer in next form:
+Translation: []
+JSON: []

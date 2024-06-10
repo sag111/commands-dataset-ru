@@ -1,0 +1,5 @@
+Given the following classes: "patrol", "stop", "move_dir", "rotate_dir", "move_on", "rotate_on", "move_to", "find", "go_around", "monitor", "rotate_to", "pause", "continue", "analyze", "follow".
+Write CLASS of object "TARGET". You can't use any other classes. If none of the classes approach, choose the closest one. Explain why shortly.
+Give answer in next form:
+Class:
+Explanation:
